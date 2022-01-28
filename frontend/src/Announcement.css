@@ -1,0 +1,19 @@
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+.announcement-container {
+  background-color: #576754;
+  border-radius: 25px;
+  padding: 30px;
+  margin: 10px;
+}
+
+#date {
+  color: #ccddbd;
+  font-weight: 600px;
+}
+
+#body {
+  color: #fff;
+}
