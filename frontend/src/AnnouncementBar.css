@@ -1,8 +1,20 @@
 .bar-container {
   width: 313px;
   padding: 30px;
-  border-radius: 30px;
+  border-radius: 20px;
   background: rgba(117, 124, 103, 0.35);
   box-shadow: -1px 4px 4px #00000040;
   backdrop-filter: blur(60px);
+  overflow-y: scroll;
+  height: 700px;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+  color: #465344;
+  text-align: center;
 }

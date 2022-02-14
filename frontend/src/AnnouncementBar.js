@@ -21,8 +21,14 @@ const AnnouncementBar = () => {
 
   return (
     <div className="bar-container">
+      <h2>Admin Announcements</h2>
       {announcements.map((announcement) => (
-        <Announcement date={announcement.date} body={announcement.body} />
+        <Announcement
+          name={announcement.name}
+          date={announcement.date}
+          title={announcement.title}
+          body={announcement.body}
+        />
       ))}
     </div>
   );
