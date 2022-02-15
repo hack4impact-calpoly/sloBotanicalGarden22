@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-slobotanicalgarden22-dev-150053-authRole",
+      "UnauthRoleArn": "arn:aws:iam::633874248049:role/amplify-slobotanicalgarden22-dev-150053-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::633874248049:role/amplify-slobotanicalgarden22-dev-150053-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-slobotanicalgarden22-dev-150053-deployment",
+      "UnauthRoleName": "amplify-slobotanicalgarden22-dev-150053-unauthRole",
+      "StackName": "amplify-slobotanicalgarden22-dev-150053",
+      "StackId": "arn:aws:cloudformation:us-west-2:633874248049:stack/amplify-slobotanicalgarden22-dev-150053/78834b10-8b8e-11ec-a0b2-066e8037c957",
+      "AmplifyAppId": "d3hdscheivbl6v"
+    }
+  }
+}

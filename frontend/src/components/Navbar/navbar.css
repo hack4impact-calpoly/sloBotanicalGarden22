@@ -1,0 +1,51 @@
+nav {
+    padding: 2em 2em;
+    justify-content: space-between;
+    display: flex;
+    background-color: #CCDDBD;
+    color: rgb(216, 216, 216);
+    font-family: SBG;
+}
+  
+nav a {
+color: #FFFFFF;
+text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+}
+
+a:link {
+    color: rgb(216, 216, 216);
+}
+
+.navFlex {
+    display: flex;
+}
+
+#align-nav-left {
+    align-self: center;
+    padding-top: 1em;
+    padding-left: 0.65em;
+    color: #FFFFFF;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+#align-nav-right {
+    align-self: center;
+    padding-top: 1em;
+    padding-left: 1.2em;
+    color: #FFFFFF;
+    font-size: 2em;
+    font-weight: 400;
+}
+
+#user-icon {
+    padding-top: 1em;
+    color: #FFFFFF;
+    font-size: 2em;
+    padding-left: 0.5em;
+    align-self: center;
+}

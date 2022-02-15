@@ -1,0 +1,10 @@
+body {
+    margin:0;
+    background-image: url(assets/logo.png);
+}
+
+@font-face {
+    font-family: SBG;
+    src: url(assets/DaysOne-Regular.ttf);
+}
+
