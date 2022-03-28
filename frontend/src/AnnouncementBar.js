@@ -26,7 +26,7 @@ const AnnouncementBar = () => {
         <Announcement
           name={announcement.name}
           date={announcement.date}
-          title={announcement.title}
+          title={announcement}
           body={announcement.body}
         />
       ))}
