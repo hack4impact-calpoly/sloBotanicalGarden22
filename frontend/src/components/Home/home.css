@@ -1,0 +1,39 @@
+.home {
+  display: flex;
+  padding: 2.6em;
+  background-image: url("../../assets/garden.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-family: SBG;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f3c44e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #eeab00;
+}
+
+#announcements {
+  margin-right: 1.5em;
+  width: 25vw;
+  background: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#dashboard {
+  color: #576754;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  height: 100%;
+}
