@@ -6,6 +6,7 @@
   background-size: cover;
   height: 100vh;
   font-family: SBG;
+<<<<<<< HEAD
 }
 
 ::-webkit-scrollbar {
@@ -28,12 +29,27 @@
   text-align: center;
   height: 100%;
   overflow-y: scroll;
+=======
+}
+
+#announcements {
+  color: #576754;
+  margin-right: 1.5em;
+  width: 25vw;
+  background: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  height: 100%;
+>>>>>>> f67818d8cde892b703c1043922b9a4cd53f56a22
 }
 
 #dashboard {
   color: #576754;
   width: 100vw;
+<<<<<<< HEAD
   background: rgba(255, 255, 255, 0.45);
+=======
+  background: rgba(255, 255, 255, 0.6);
+>>>>>>> f67818d8cde892b703c1043922b9a4cd53f56a22
   text-align: center;
   height: 100%;
 }

@@ -1,0 +1,15 @@
+.navFlex {
+  display: flex;
+}
+
+#love {
+  padding-top: 3em;
+  color: #ffffff;
+  font-size: 1.75em;
+  font-weight: 400;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}

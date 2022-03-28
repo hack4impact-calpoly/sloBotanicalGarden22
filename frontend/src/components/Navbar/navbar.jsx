@@ -12,7 +12,7 @@ export default function Navbar() {
         <Link to="/">
           <img src={logo} width="231.22px" height="119px" alt="logo" />
         </Link>
-        <img id="align-nav-left" src={vector} alt="" />
+        <img id="align-nav-left" src={vector} alt="vector" />
         <h1 id="align-nav-left">Volunteer Database</h1>
       </div>
 
@@ -23,7 +23,7 @@ export default function Navbar() {
         <h1 id="align-nav-right">
           <Link to="/about">Profile</Link>
         </h1>
-        <img id="user-icon" src={userIcon} alt="" />
+        <img id="user-icon" src={userIcon} alt="userIcon" />
       </div>
     </nav>
   );

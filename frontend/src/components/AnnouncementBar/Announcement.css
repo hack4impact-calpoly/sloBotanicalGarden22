@@ -19,7 +19,11 @@
   overflow-wrap: break-word;
 }
 
+<<<<<<< HEAD
 #content {
+=======
+#body {
+>>>>>>> f67818d8cde892b703c1043922b9a4cd53f56a22
   color: #fff;
   font-size: 14px;
 }
