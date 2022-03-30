@@ -6,30 +6,6 @@
   background-size: cover;
   height: 100vh;
   font-family: SBG;
-<<<<<<< HEAD
-}
-
-::-webkit-scrollbar {
-  width: 15px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #f3c44e;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #eeab00;
-}
-
-#announcements {
-  margin-right: 1.5em;
-  width: 25vw;
-  background: rgba(255, 255, 255, 0.45);
-  text-align: center;
-  height: 100%;
-  overflow-y: scroll;
-=======
 }
 
 #announcements {
@@ -39,17 +15,12 @@
   background: rgba(255, 255, 255, 0.6);
   text-align: center;
   height: 100%;
->>>>>>> f67818d8cde892b703c1043922b9a4cd53f56a22
 }
 
 #dashboard {
   color: #576754;
   width: 100vw;
-<<<<<<< HEAD
-  background: rgba(255, 255, 255, 0.45);
-=======
   background: rgba(255, 255, 255, 0.6);
->>>>>>> f67818d8cde892b703c1043922b9a4cd53f56a22
   text-align: center;
   height: 100%;
 }
