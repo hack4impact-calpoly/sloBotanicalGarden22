@@ -37,7 +37,7 @@ export default function Home() {
         >
           <Heading size="lg" color="#576754">
             {" "}
-            Admin Annoucements:{" "}
+            Admin Announcements:{" "}
           </Heading>
           <Box>
             <AnnouncementBar />
