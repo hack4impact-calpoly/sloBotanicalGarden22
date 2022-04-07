@@ -1,0 +1,51 @@
+.check-status {
+    display: flex;
+    justify-content: center;
+    margin-top: -8px;
+    margin-bottom: -50px;
+}
+
+.check-status > * {
+    margin: 0 30px 30px 30px;
+}
+
+.ui.checkbox label:before,
+.ui.checkbox label:after{
+  right: 0px;
+  left: auto;
+}
+
+.ui.checkbox label {
+  padding: 0;
+  padding-right: 24px;
+}
+
+.photo-label {
+    margin: 0px auto;
+}
+
+.heading {
+  margin: 0 0 .28571429rem 0;
+  color: rgba(0,0,0,.87);
+  font-size: .92857143em;
+  font-weight: 700;
+  text-transform: none;
+  display: inline;
+}
+
+.signUpPage{
+  background-image: url("../../assets/garden.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: SBG;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signUpForm {
+  border-radius: 5%;
+  background-color: white;
+  margin: 5%;
+}
