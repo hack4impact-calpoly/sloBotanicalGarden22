@@ -10,8 +10,15 @@ AWS.config.update(configuration);
 
 const docClient = new AWS.DynamoDB.DocumentClient();
 
+export const getRandomId = () => {
+  const ret = (Math.random() * Date.now()).toString(36);
+  console.log(ret);
+  return (Math.random() * Date.now()).toString(36);
+};
+
+//Where tableName is "admin_announcements", "users", or "hoursLog"
+//Grabs all of the data in the table
 export const fetchData = async (tableName) => {
-  console.log("in fetch data");
   var params = {
     TableName: tableName,
   };
@@ -19,21 +26,21 @@ export const fetchData = async (tableName) => {
   let result = await docClient
     .scan(params, function (err, data) {
       if (!err) {
-        console.log("DATA");
-        console.log(data.Items);
         return data.Items;
       }
     })
     .promise()
     .then((data) => {
-      console.log(data);
       return data;
     });
   return result;
 };
 
-/*export const putData = (tableName, data) => {
+//Where tableName is "admin_announcements", "users", or "hoursLog"
+//data is the item to be stored in the database
+export const putData = (tableName, data) => {
   console.log("PUTDATA");
+  console.log(data);
   var params = {
     TableName: tableName,
     Item: data,
@@ -46,4 +53,30 @@ export const fetchData = async (tableName) => {
       console.log("Success", data);
     }
   });
-};*/
+};
+
+//Where tableName is "admin_announcements", "users", or "hoursLog"
+// itemKey is the the actually primary key identifier
+// itemKeyName is the name of the primary key
+// for admin_announcements table - primary_id
+// for hoursLog table - primary_logId
+// for users - username
+export const deleteItem = (tableName, itemKey, itemKeyName) => {
+  var params = {
+    TableName: tableName,
+    Key: {
+      itemKeyName: itemKey,
+    },
+  };
+
+  docClient.delete(params, function (err, data) {
+    if (err) {
+      console.error(
+        "Unable to delete item. Error JSON:",
+        JSON.stringify(err, null, 2)
+      );
+    } else {
+      console.log("DeleteItem succeeded:", JSON.stringify(data, null, 2));
+    }
+  });
+};

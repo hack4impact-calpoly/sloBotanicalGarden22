@@ -1,17 +1,164 @@
 import React from "react";
-import "./home.css";
 import "../../App.css";
+import bgimage from "../../assets/garden.png";
 import AnnouncementBar from "../AnnouncementBar/AnnouncementBar.js";
+import {
+  Box,
+  Text,
+  Flex,
+  Image,
+  Center,
+  Spacer,
+  HStack,
+  Heading,
+  Button,
+  Grid,
+  GridItem,
+} from "@chakra-ui/react";
+import VolunteerTable from "../VolunteerTable/volunteerTable.js";
 
 export default function Home() {
   return (
-    <body className="home">
-      <div id="announcements">
-        <AnnouncementBar />
-      </div>
-      <div id="dashboard">
-        <h1>Dashboard</h1>
-      </div>
-    </body>
+    <Flex
+      p={10}
+      w="100%"
+      bgImage={bgimage}
+      bgPosition="center"
+      bgSize="cover"
+      bgRepeat="no-repeat"
+    >
+      <Flex w="100%">
+        <Box
+          w="25%"
+          borderRadius={"12px"}
+          p={3}
+          boxShadow="dark-lg"
+          backdropFilter="blur(60px)"
+        >
+          <Heading size="lg" color="#576754">
+            {" "}
+            Admin Annoucements:{" "}
+          </Heading>
+          <Box>
+            <AnnouncementBar />
+          </Box>
+        </Box>
+        <Spacer />
+        <Box
+          w="72%"
+          h="100vh"
+          borderRadius={"12px"}
+          boxShadow="dark-lg"
+          backdropFilter="blur(60px)"
+        >
+          <Box
+            borderRadius={"12px"}
+            boxShadow="lg"
+            bg="#F5F5F559"
+            backdropFilter="blur(60px)"
+            bgOpacity="0.75"
+          >
+            <Box bg="#576754" borderRadius={"12px"} boxShadow="dark-lg">
+              <Heading p={3} size="lg" color="white">
+                {" "}
+                This week:{" "}
+              </Heading>
+            </Box>
+            <Flex>
+              <Center w="100%">
+                <Heading fontSize="144"> 100 </Heading>
+                <Heading mb={3} fontSize="lg">
+                  hours contributed by
+                  <br />
+                  SLO volunteers{" "}
+                </Heading>
+              </Center>
+            </Flex>
+          </Box>
+          <Box>
+            <Flex p={10}>
+              <Box
+                bg="#576754"
+                w="30%"
+                borderRadius={"12px"}
+                boxShadow="dark-lg"
+                backdropFilter="blur(60px)"
+              >
+                <Flex>
+                  <Center w="100%">
+                    <Heading fontSize="90px" color="#CCDDBD">
+                      {" "}
+                      30{" "}
+                    </Heading>
+                    <Heading fontSize="20px" color="#CCDDBD">
+                      {" "}
+                      HRS{" "}
+                    </Heading>
+                  </Center>
+                </Flex>
+                <Heading pb={3} fontSize="20px" color="#CCDDBD">
+                  {" "}
+                  Gardening{" "}
+                </Heading>
+              </Box>
+              <Spacer />
+              <Box
+                bg="#576754"
+                w="30%"
+                borderRadius={"12px"}
+                boxShadow="dark-lg"
+                backdropFilter="blur(60px)"
+              >
+                <Flex>
+                  <Center w="100%">
+                    <Heading fontSize="90px" color="#CCDDBD">
+                      {" "}
+                      30{" "}
+                    </Heading>
+                    <Heading fontSize="20px" color="#CCDDBD">
+                      {" "}
+                      HRS{" "}
+                    </Heading>
+                  </Center>
+                </Flex>
+                <Heading pb={3} fontSize="20px" color="#CCDDBD">
+                  {" "}
+                  Gardening{" "}
+                </Heading>
+              </Box>
+              <Spacer />
+              <Box
+                bg="#576754"
+                w="30%"
+                borderRadius={"12px"}
+                boxShadow="dark-lg"
+                backdropFilter="blur(60px)"
+              >
+                <Flex>
+                  <Center w="100%">
+                    <Heading fontSize="90px" color="#CCDDBD">
+                      {" "}
+                      30{" "}
+                    </Heading>
+                    <Heading fontSize="20px" color="#CCDDBD">
+                      {" "}
+                      HRS{" "}
+                    </Heading>
+                  </Center>
+                </Flex>
+                <Heading pb={3} fontSize="20px" color="#CCDDBD">
+                  {" "}
+                  Gardening{" "}
+                </Heading>
+              </Box>
+            </Flex>
+          </Box>
+          <Flex p={10}>
+            <Heading size="lg"> Volunteering History: </Heading>
+            <VolunteerTable />
+          </Flex>
+        </Box>
+      </Flex>
+    </Flex>
   );
 }

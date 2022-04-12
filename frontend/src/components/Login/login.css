@@ -1,0 +1,87 @@
+[data-amplify-authenticator] {
+    --amplify-colors-background-primary: white;
+    --amplify-colors-border-primary: var(--amplify-colors-neutral-20);
+    --amplify-colors-border-secondary: var(--amplify-colors-neutral-40);
+    --amplify-colors-border-tertiary: var(--amplify-colors-neutral-60);
+    --amplify-colors-brand-primary-100: var(--amplify-colors-green-10);
+    --amplify-colors-font-interactive: var(--amplify-colors-white);
+    --amplify-components-heading-color: #576754;
+    --amplify-components-tabs-item-active-border-color: var(
+      --amplify-colors-white
+    );
+    --amplify-components-tabs-item-active-color: var(--amplify-colors-white);
+    --amplify-components-tabs-item-color: var(--amplify-colors-white);
+    --amplify-components-tabs-item-focus-color: var(--amplify-colors-white);
+    --amplify-components-text-color: var(--amplify-colors-font-interactive);
+}
+
+[data-amplify-authenticator] [data-amplify-form] {
+  padding: None;
+  padding-top: var(--amplify-space-xl);
+  padding-bottom: 2%;
+  padding-right: var(--amplify-space-xl);
+  padding-left: var(--amplify-space-xl);
+}
+
+.OR {
+  border-bottom: 2px solid #576754; 
+  line-height: 0.1em;
+  align-self: center;
+  width: 60%;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+} 
+
+.OR span { 
+  width: 100%;
+  align-self: center;
+  background:#fff; 
+  padding:0 10px; 
+  font-family: SBG;
+  color: #aeb5ad;
+}
+
+  .amplify-button[data-variation='primary'] {
+    background: #576754;
+    width: 50%;
+    align-self: center;
+  }
+
+  .signInHeading {
+    font-family: SBG;
+    text-align: center;
+  }
+
+
+  [data-amplify-authenticator] [data-amplify-container]{
+    height: 105%;
+    background-color: white;
+    box-shadow: none;
+    border-radius: 5%;
+  } 
+
+[data-amplify-authenticator] [data-amplify-router] {
+    background-color: var(--amplify-colors-background-primary);
+    box-shadow: none;
+    border-radius: 5%;
+}
+
+  .signIn {
+    background: white;
+    padding: 0% 0% 1%;
+    border-radius: 5%;
+  }
+
+  .signInPage{
+    display: flex;
+    padding: 2.6em;
+    background-image: url("../../assets/garden.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    font-family: SBG;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

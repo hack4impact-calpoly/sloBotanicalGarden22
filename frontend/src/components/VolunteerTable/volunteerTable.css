@@ -1,0 +1,18 @@
+table { 
+    border-spacing: 0 1em;
+}
+
+td {
+    padding: 10px;
+}
+
+td:nth-child(1) {
+  width: 500px;
+}
+
+td, th {
+    border-left: none;
+    border-right: none;
+    clip-path: inset(-10px 0px -10px 0px);
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
