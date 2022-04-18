@@ -3,6 +3,7 @@ import bgimage from "../../assets/garden.png";
 import AnnouncementBar from "../AnnouncementBar/AnnouncementBar.js";
 import React, { useState, useEffect } from "react";
 import { fetchUser } from "../../dynoFuncs";
+import ContributionTable from "../ContributionTable/ContributionTable";
 
 import {
   Box,
@@ -167,6 +168,7 @@ export default function Home(props) {
           </Box>
           <Flex p={10}>
             <Heading size="lg"> Volunteering History: </Heading>
+            <ContributionTable />
           </Flex>
         </Box>
       </Flex>
