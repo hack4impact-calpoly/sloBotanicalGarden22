@@ -6,27 +6,12 @@ td {
     padding: 10px;
 }
 
-td:nth-child(1) {
-  width: 500px;
-}
-
 td, th {
     border-left: none;
     border-right: none;
     clip-path: inset(-10px 0px -10px 0px);
     box-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
-
-.vol-table {
-    background-image: url("../../assets/garden.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-family: SBG;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
 
 .pagination {
     background-color:#CCDDBD;
@@ -41,5 +26,4 @@ td, th {
     color: rgb(27, 122, 27);
     background: white;
     padding: 10px;
-    margin-right: 10px;
 }
