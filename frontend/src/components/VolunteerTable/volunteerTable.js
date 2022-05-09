@@ -1,8 +1,14 @@
-import React, { useState, useLayoutEffect, useEffect, useContext, useRef } from "react";
+import React, {
+  useState,
+  useLayoutEffect,
+  useEffect,
+  useContext,
+  useRef,
+} from "react";
 import { useSortBy, useTable, usePagination } from "react-table";
 import "./volunteerTable.css";
 import bgimage from "../../assets/garden.png";
-import { Flex, Box, VStack, Spacer } from "@chakra-ui/react";
+import { Flex, Box, VStack } from "@chakra-ui/react";
 import { CSVLink } from "react-csv";
 import {
   fetchData,
@@ -19,11 +25,9 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { IconButton } from "@material-ui/core";
 import { GlobalContext } from "../../GlobalState";
 
-
 import { volunteers } from "./vols"; // TODO: Remove
 import { hours } from "./hours";
 import { group } from "./group";
-
 
 const VolunteerTable = () => {
   // const [data, setData] = useState();
@@ -45,11 +49,7 @@ const VolunteerTable = () => {
   // }
   // return <h2>You Do Not Have the Permissions to View This Page</h2>;
 
-
-  const data = React.useMemo(
-    () => volunteers,
-    []
-  )
+  const data = React.useMemo(() => volunteers, []);
   return (
     <Flex
       p={10}
@@ -72,12 +72,11 @@ const VolunteerTable = () => {
         // setReloadPage={setReloadPage}
       />
     </Flex>
-  )
+  );
 };
 
 const Table = (props) => {
   const { data, group } = props;
-  console.log(data);
   const [openDelete, setDelete] = React.useState(false);
   const [userToDelete, setUserToDelete] = React.useState();
   const [openStatus, setStatus] = React.useState(false);
@@ -101,8 +100,8 @@ const Table = (props) => {
   };
 
   const handleDelete = async () => {
-    console.log("IN handle delete");
-    console.log("UserDel: " + userToDelete);
+    // console.log("IN handle delete");
+    // console.log("UserDel: " + userToDelete);
     deleteVolunteer(userToDelete, "volunteers_group");
     setDelete(false);
     props.setReloadPage(props.reloadPage + 1);
@@ -124,8 +123,8 @@ const Table = (props) => {
       firstRender.current = false;
       return;
     }
-    // csvLog.current.link.click()
-  }, [loggedHours])
+    csvLog.current.link.click();
+  }, [loggedHours]);
 
   const columns = React.useMemo(
     () => [
@@ -253,7 +252,7 @@ const Table = (props) => {
       },
     },
     useSortBy,
-    usePagination,
+    usePagination
   );
 
   return (
@@ -267,41 +266,72 @@ const Table = (props) => {
         bgRepeat="no-repeat"
         className="vol-table"
       >
-        <VStack
-          textAlign="center"
-          marginRight="50px"
-          spacing="20px"
-        >
-          <CSVLink data={data} filename="individual_volunteers" className="export">
+        <VStack textAlign="center" marginRight="50px" spacing="20px">
+          <CSVLink
+            data={data}
+            filename="individual_volunteers.csv"
+            className="export"
+          >
             Export Individual Volunteers
           </CSVLink>
-          <CSVLink data={group} filename="group_volunteers" className="export">
+          <CSVLink
+            data={group}
+            filename="group_volunteers.csv"
+            className="export"
+          >
             Export Group Volunteers
           </CSVLink>
           <div className="date">
             <label style={{ background: "white", padding: "2px" }}>Start</label>
             <br />
-            <input type="date" onChange={(e) => {
-              setStartDate(e);
-            }}/>
+            <input
+              type="date"
+              onChange={(e) => {
+                setStartDate(e);
+              }}
+            />
           </div>
           <div className="date" style={{ marginTop: "5px" }}>
             <label style={{ background: "white", padding: "2px" }}>End</label>
             <br />
-            <input type="date" onChange={(e) => {
-              setEndDate(e);
-            }}/>
+            <input
+              type="date"
+              onChange={(e) => {
+                setEndDate(e);
+              }}
+            />
           </div>
-          <button className="export" onClick={() => {
-            if (!startDate || !endDate) {
-              <span>Please select a start date and end date</span>
-            } else {
-              setLoggedHours(hours.filter((obj) => {
-                return new Date(obj.date).getTime() >= startDate.target.valueAsNumber && new Date(obj.date).getTime() <= endDate.target.valueAsNumber
-              }))
-            }
-          }}>Export Logged Hours</button>
-          <CSVLink data={loggedHours} filename="logged_volunteer_data" className="hidden" ref={csvLog} target="_blank" />
+          <button
+            className="export"
+            onClick={() => {
+              if (!startDate || !endDate) {
+                alert("Please select a start date and end date");
+              } else {
+                const logged = hours.filter((obj) => {
+                  return (
+                    new Date(obj.date).getTime() >=
+                      startDate.target.valueAsNumber &&
+                    new Date(obj.date).getTime() <= endDate.target.valueAsNumber
+                  );
+                });
+                console.log(logged);
+                if (logged.length === 0) {
+                  alert("No hours were logged during this window");
+                  return;
+                }
+                setLoggedHours(logged);
+              }
+            }}
+          >
+            Export Logged Hours
+          </button>
+          <CSVLink
+            data={loggedHours}
+            filename="logged_volunteer_data"
+            className="hidden"
+            ref={csvLog}
+            target="_blank"
+          />
         </VStack>
         <Box>
           <table
@@ -454,7 +484,6 @@ const Table = (props) => {
 
 const GroupTable = (props) => {
   const { data } = props;
-  console.log(data);
   const [openDelete, setDelete] = React.useState(false);
   const [userToDelete, setUserToDelete] = React.useState();
   const [openStatus, setStatus] = React.useState(false);
@@ -473,8 +502,8 @@ const GroupTable = (props) => {
   };
 
   const handleDelete = async () => {
-    console.log("IN handle delete");
-    console.log("UserDel: " + userToDelete);
+    // console.log("IN handle delete");
+    // console.log("UserDel: " + userToDelete);
     deleteVolunteer(userToDelete, "volunteers_group");
     setDelete(false);
     props.setReloadPage(props.reloadPage + 1);
@@ -606,7 +635,7 @@ const GroupTable = (props) => {
       },
     },
     useSortBy,
-    usePagination,
+    usePagination
   );
 
   return (
