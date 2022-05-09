@@ -9,6 +9,7 @@ import { useSortBy, useTable, usePagination } from "react-table";
 import "./volunteerTable.css";
 import bgimage from "../../assets/garden.png";
 import { Flex, Box, VStack } from "@chakra-ui/react";
+import { Checkbox } from "semantic-ui-react";
 import { CSVLink } from "react-csv";
 import {
   fetchData,
@@ -33,6 +34,8 @@ const VolunteerTable = () => {
   // const [data, setData] = useState();
   const [reloadPage, setReloadPage] = useState(0);
   const { currentUserInfo } = useContext(GlobalContext);
+  const [groupTable, setGroupTable] = useState(false);
+  const [indiv, setIndiv] = useState(true);
 
   // useEffect(() => {
   //   fetchData("volunteers_group").then((result) => setData(result));
@@ -59,18 +62,47 @@ const VolunteerTable = () => {
       bgSize="cover"
       bgRepeat="yes-repeat"
       overflow="auto"
+      justify="space-evenly"
+      align="center"
     >
-      <Table
+       <div style={{ textAlign: "center" }}>
+          <Checkbox
+            label="Individual"
+            style={{ background: "#d1fad6", padding: "20px", fontSize: "20px" }}
+            borderColor="black"
+            onChange={() => {
+              setIndiv(true);
+              if (groupTable) {
+                setGroupTable(false);
+              }
+            }}
+            checked={indiv}
+          >Individual</Checkbox>
+          <br />
+          <Checkbox
+            style={{ background: "#d1fad6", padding: "20px", fontSize: "20px" }}
+            borderColor="black"
+            label="Group"
+            onChange={() => {
+              setGroupTable(true);
+              if (indiv) {
+                setIndiv(false);
+              }
+            }}
+            checked={groupTable}
+          >Group</Checkbox>
+      </div>
+      {indiv && <Table
         data={data}
         group={group}
         // reloadPage={reloadPage}
         // setReloadPage={setReloadPage}
-      />
-      <GroupTable
+      />}
+      {groupTable && <GroupTable
         data={group}
         // reloadPage={reloadPage}
         // setReloadPage={setReloadPage}
-      />
+      />}
     </Flex>
   );
 };
