@@ -1,0 +1,14 @@
+.indexedStep {
+    color: rgb(0, 99, 66);
+    font-size: 16px;
+    background-color: white;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.indexedStep.accomplished {
+    background-color: rgba(255, 242, 121, 0.938);
+}
